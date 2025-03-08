@@ -1,0 +1,13 @@
+#---- Ignore sensitive files ----
+.env
+
+#---- Ignore dependency folders ----
+/backend/node_modules/
+/frontend/node_modules/
+
+#---- Ignore build directories if any ----
+/backend/build/
+/frontend/build/
+
+#---- Ignore log files ----
+*.log
