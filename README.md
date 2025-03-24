@@ -14,8 +14,7 @@ This project is a chat application designed to provide real-time communication b
 ## Tech Stack
 - **Frontend:** React, Tailwind CSS
 - **Backend:** Node.js, Express.js, MongoDB
-- **Real-Time Communication:** (Optional: Socket.IO if implemented)
-- **Cloud Services:** Cloudinary for image and video storage
+- **Real-Time Communication:** Socket.IO 
 - **Authentication:** JSON Web Tokens (JWT)
 
 ## Getting Started
