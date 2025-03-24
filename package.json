@@ -1,0 +1,23 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "This project is a chat application designed to provide real-time communication between users. The application includes a robust messaging model along with a modern front-end integration using popular packages.",
+  "main": "index.js",
+  "scripts": {
+    "build":"npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start":"npm run start --prefix backend"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramCharan2405/Chat-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ramCharan2405/Chat-app/issues"
+  },
+  "homepage": "https://github.com/ramCharan2405/Chat-app#readme"
+}
