@@ -8,7 +8,7 @@ import path from 'path';
 import { connectDB } from './lib/db.js';
 
 
-dotenv.config(); // Load environment variables first
+dotenv.config(); 
 
 import authRoutes from './routes/auth.route.js';
 import messageRoutes from './routes/message.route.js';
@@ -18,7 +18,7 @@ import { io, app, server } from './lib/socket.js';
 const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
-// Increase the JSON and URL-encoded payload limits to 50mb
+
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 

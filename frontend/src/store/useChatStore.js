@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import toast from 'react-hot-toast';
 import { axiosInstance } from '../lib/axios';
 import { useAuthStore } from './useAuthStore';
+import { User } from 'lucide-react';
 
 
 export const useChatStore = create((set, get) => ({
@@ -52,16 +53,21 @@ export const useChatStore = create((set, get) => ({
   },
   
   subscribeToMessages: () => {
-    const {selectedUser} = get();
-    if (!selectedUser) return;
+    
+    
 
     const socket = useAuthStore.getState().socket;
 
     socket.on('newMessage', (newMessage) => {
-      const isMessageSentFromSelectedUser = newMessage.senderId === selectedUser._id;
-      if (!isMessageSentFromSelectedUser) return; 
+      const { selectedUser, messages, users } = get();
+      set({ messages: [...messages, newMessage] });
+      const isMessageSentFromSelectedUser = selectedUser?._id === newMessage.senderId;
+      const senderName = newMessage.senderName || users.find((user) => user._id === newMessage.senderId)?.fullName || "Unknown Sender";
+      
+      if (!isMessageSentFromSelectedUser || !selectedUser) {
+        toast.success(`New message received ${senderName}`);
+      }
 
-      set({ messages: [...get().messages, newMessage], });
     });
   },
 
